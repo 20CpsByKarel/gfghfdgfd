@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aktualizace Ceny Produktu</title>
+    <title>Aktualizace Ceny Produkdtu</title>
     <script>
         async function updatePrice() {
             const url = 'https://henry-morgan.admin.s15.upgates.com/api/v2/products';
+            const proxyUrl = 'https://corsproxy.io/?'; // Proxy pro CORS
             const username = '68672353';
             const password = 'DTzEIxcrWlVqkMMKL9LW';
 
@@ -30,7 +31,7 @@
             };
 
             try {
-                const response = await fetch(url, {
+                const response = await fetch(proxyUrl + url, {
                     method: 'PUT',  // Změň na 'POST', pokud je to potřeba
                     headers: {
                         'Content-Type': 'application/json',
